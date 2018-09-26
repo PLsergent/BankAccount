@@ -7,15 +7,13 @@ using namespace std;
 int main(){
     Banque bnp(12);
     bnp.ajouteCompte("MatthieuCourant", 50, 200);
-
-    //Compte cpt1("MatthieuCourant", 50, 200);
-    //Compte cpt2("PLCourant", 700, 400);
-
-    //cpt1.afficher();
-    //cpt2.afficher();
+    bnp.ajouteCompte("PLCourant", 450, 200);
+    bnp.ajouteCompte("DavCourant", 35, 50);
 
     bnp.afficherTabCompte();
+    cout << "==============================" << endl;
+    bnp.supprimeCompte(0);
 
-    //bnp.supprimeCompte(0);
+    bnp.afficherTabCompte();
 
 }
