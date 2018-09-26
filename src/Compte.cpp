@@ -52,5 +52,5 @@ void Compte::crediter(float mont)
 
 void Compte::afficher()
 {
-    cout << "Le compte " << numeroCompte << " a pour nom " << nomCompte << ", son solde est de " << soldeCompte << " et son d�couvert maximum est de " << decouvertMax << endl;
+    cout << "Le compte " << numeroCompte << " a pour nom " << nomCompte << ", son solde est de " << soldeCompte << " et son decouvert maximum est de " << decouvertMax << endl;
 }

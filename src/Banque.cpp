@@ -16,6 +16,7 @@ Banque::~Banque()
 Banque::Banque(int nbct){
     this->nbct = nbct;
     nbc = 0;
+    comptes = new Compte[nbct];
 }
 
 Banque::Banque(const Banque& banque){
@@ -25,7 +26,13 @@ Banque::Banque(const Banque& banque){
 
 void Banque::ajouteCompte(string cpt, float soldeCpt, float decouvMax)
 {
+    int size = nbc ++;
+    if (size > nbct){
+      nbct += 1;
+      this->redimensionneTableauComptes(nbct);
+    }
     comptes[nbc] = Compte(cpt, soldeCpt, decouvMax);
+    nbc ++;
 }
 
 void Banque::supprimeCompte(string nomCompte){
@@ -36,6 +43,11 @@ void Banque::supprimeCompte(string nomCompte){
         }
       }
     }
+    nbc --;
+    if (nbc <= nbct/2 ){
+      nbct /= 2;
+      this->redimensionneTableauComptes(nbct);
+    }
 }
 
 void Banque::supprimeCompte(int numCompte){
@@ -45,6 +57,11 @@ void Banque::supprimeCompte(int numCompte){
           comptes[j] = comptes[j+1];
         }
       }
+    }
+    nbc --;
+    if (nbc <= nbct/2 ){
+      nbct /= 2;
+      this->redimensionneTableauComptes(nbct);
     }
 }
 
@@ -61,4 +78,10 @@ void Banque::redimensionneTableauComptes(int nouvelleTaille){
     }
     delete [] comptes;
     comptes = newcomptes;
+}
+
+void Banque::afficherTabCompte(){
+  for (int i = 0; i < nbc; i++){
+    comptes[i].afficher();
+  }
 }

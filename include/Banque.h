@@ -24,13 +24,14 @@ class Banque
         void ajouteCompte(string, float, float);
         void supprimeCompte(string);
         void supprimeCompte(int);
+        void afficherTabCompte();
 
     private:
-        int nbc;
         int nbct;
-        Compte* comptes = new Compte[nbct];
-
+        int nbc;
+        Compte* comptes;
         void redimensionneTableauComptes(int nouvelleTaille);
+
 };
 
 #endif // BANQUE_H
