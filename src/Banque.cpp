@@ -82,6 +82,8 @@ void Banque::redimensionneTableauComptes(int nouvelleTaille){
 
 void Banque::afficherTabCompte(){
   for (int i = 0; i < nbc; i++){
-    comptes[i].afficher();
+    if (comptes[i].getNomCompte() != ""){
+      comptes[i].afficher();
+    }
   }
 }
