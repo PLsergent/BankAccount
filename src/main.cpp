@@ -3,6 +3,10 @@
 #include "../include/Compte.h"
 #include <string>
 
+//Author : Pierre-Louis Sergent, Matthieu Kirschleger//
+
+//Main of BankAccount//
+//La classe Banque met en oeuvre une composition.//
 
 using namespace std;
 
